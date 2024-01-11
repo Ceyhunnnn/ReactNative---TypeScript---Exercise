@@ -1,26 +1,33 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text} from 'react-native';
+import {Colors} from '../styles';
 
 interface IButtonProps {
-  title: string;
+  title?: string;
   onPress: () => void;
 }
 const CustomButton: React.FC<IButtonProps> = props => {
-  const {title, onPress} = props;
+  const {title = 'Custom Button', onPress} = props;
   return (
     <Pressable onPress={onPress} style={styles.button}>
-      <Text>{title}</Text>
+      <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    paddingVertical: 5,
+    marginHorizontal: 16,
+    paddingVertical: 16,
     paddingHorizontal: 10,
-    borderRadius: 5,
+    borderRadius: 20,
     borderWidth: 0.2,
-    borderColor: '#212124',
+    backgroundColor: Colors.APPCOLOR,
+  },
+  text: {
+    textAlign: 'center',
+    fontWeight: '600',
+    color: 'white',
   },
 });
 
