@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.APPCOLOR,
   },
   date: {
+    fontSize: 15,
     marginTop: 10,
     color: Colors.WHITE,
     textAlign: 'center',
